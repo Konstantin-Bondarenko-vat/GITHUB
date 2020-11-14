@@ -48,6 +48,7 @@ def fun_3(string):
     return  
 ##############################################################
 
+
 string=input('Input string: ')
 
 if len(string)<30:
