@@ -9,46 +9,52 @@
 кiлькiсть букв та цифр
 -  якщо довжина менше 30 -> прiнтує суму всiх чисел та окремо
 рядок без цифр (лише з буквами)
--  якщо довжина бульше 50 - > ваша фантазiя'''
+-  якщо довжина бульше 50 - > ваша фантазiя...вивидить лише числа'''
 ###################################################################
-def fun_1(st):
+def fun_1(string):
     sum=0
-    length_st=len(st)     
-    n_numbers=0
-    letters=[]
-        
-    for i in range(len(st)):
-        for k in range(9):
-            if str(k)==st[i]:
-                sum+=int(st[i])
-                print(type(k))
-                st
-                del st[i]
-                
-    print('sum= ',sum)
-    print('letters= ',st)
+    letters=''
+    for i in range(0,len(string)):
+#       if string[i].isnumeric():
+        if string[i].isdigit():
+            sum+=int(string[i])
+        else:        
+            letters+=string[i]                                        
+    print('sum = ',sum)
+    print('letters: ',letters)
     return   
 ######################################################    
-def fun_2(st):
-    
-    length_st=len(st)
+def fun_2(string):
+    length_st=len(string)
     print('length_st=',length_st,)
     n_numbers=0
-    for i in range(len(st)):
-        for k in range(10):
-            if st[i]==str(k):
+    for i in range(len(string)):
+        if string[i].isnumeric():
                 n_numbers+=1
                 n_letters=length_st-n_numbers
     print('n_numbers=',n_numbers,)
-    print('n_letters=',n_letters)
+    print('n_letters: ',n_letters)
     return 
 ##############################################################
-st=input('Input string: ')
+def fun_3(string):
+    string_numbers=''
+    for i in range(0,len(string)):
+#       if string[i].isnumeric():
+        if string[i].isdigit():
+            string_numbers+=string[i]
+                    
+    print('string_numbers: ',string_numbers)
+    
+    return  
+##############################################################
 
-if len(st)<10:
-    rez=fun_1(st)
+string=input('Input string: ')
 
-if len(st)>=10 and  len(st)<=50:
-    rez=fun_2(st)
+if len(string)<30:
+    result=fun_1(string)
 
+if len(string)>=30 and len(string)<=50:
+    result=fun_2(string)
 
+if len(string)>50:
+    result=fun_3(string)
