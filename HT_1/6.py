@@ -12,7 +12,7 @@ while i<len(a) and flag==0:
         flag=1
     i = i+1
 if flag==1:
-    print(s,'->',a, ':True')
+    print(s,'->',a, ': True')
 else:
-    print(s,'->',a, ':False')
+    print(s,'->',a, ': False')
  

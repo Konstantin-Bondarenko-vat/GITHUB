@@ -1,14 +1,10 @@
 ####################################Tasks:
 #11. Write a script to remove duplicates from Dictionary.
 
-a={1: 100, 2: 20, 3: 100, 4: 100, 5: 50, 6: 100}
+a={1: 10, 2: 20, 3: 23, 4: 40, 5: 50, 6: 60}
 print(a)
-Len=len(a)
-print(Len)
-
-for i in range(0,len(a)-1):    
-    if a[i]==a[i+1]:
-        print  ('is a duplicate') 
-        
-print(a)   
-    
+b={}
+for i in range(len(a)): 
+    for k in range(len(a)):
+         b.update(a)            
+print(b)
